@@ -13,6 +13,8 @@ export const IConfigurationService = createDecorator<IConfigurationService>('con
 export interface IConfigurationService extends IEventEmitter {
 	serviceId: ServiceIdentifier<any>;
 
+	getConfiguration<T>(section?: string): winjs.TPromise<T>;
+
 	/**
 	 * Fetches the appropriate section of the configuration JSON file.
 	 * This will be an object keyed off the section name.
